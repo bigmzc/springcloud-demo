@@ -1,0 +1,25 @@
+server:
+  port: 8763
+  jsp-servlet:
+    init-parameters:
+      development: true
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://peer:3306/cloud
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  application:
+    name: order
+mybatis:
+  mapper-locations: classpath:com/nyist/mapper/*Mapper.xml
+  type-aliases-package: com.nyist.entity
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer:8761/eureka
